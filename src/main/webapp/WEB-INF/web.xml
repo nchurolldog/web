@@ -6,9 +6,20 @@
          version="4.0">
 
     <display-name>teamwork-web</display-name>
+
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.nchu.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
 
 </web-app>
