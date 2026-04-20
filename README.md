@@ -56,12 +56,35 @@ CREATE DATABASE teamwork_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 3. 选择项目根目录下的 `pom.xml`
 4. 点击 `Open as Project`
 
-### 5. 运行项目
+### 5. 配置并运行项目
 
-1. 配置 Tomcat 服务器
-2. 部署 `teamwork-web:war exploded`
-3. 启动服务器
-4. 访问 http://localhost:8080/
+#### 详细的 Tomcat 配置步骤：
+
+1. **添加 Tomcat 服务器**
+   - 点击右上角的 `Add Configuration...`
+   - 点击 `+` 号，选择 `Tomcat Server` → `Local`
+   - 如果没有配置 Tomcat，点击 `Configure...` 选择 Tomcat 安装目录
+
+2. **配置 Deployment（部署）**
+   - 切换到 `Deployment` 标签页
+   - 点击 `+` 号，选择 `Artifact...`
+   - 选择 `teamwork-web:war exploded`
+   - **重要**: 将 `Application context` 设置为 `/`（斜杠），这样访问根路径就可以了
+
+3. **启动服务器**
+   - 点击绿色的运行按钮（或者 Debug 按钮）
+   - 等待服务器启动完成
+
+4. **访问项目**
+   - 打开浏览器访问: http://localhost:8080/
+   - 测试 Servlet: http://localhost:8080/hello
+
+#### 常见问题 - 404 错误：
+
+如果还是 404，请检查：
+1. **Application context** 是否设置为 `/`
+2. 访问路径是否正确（不要加 `/teamwork-web` 前缀）
+3. 控制台是否有报错信息
 
 ## 项目结构
 
